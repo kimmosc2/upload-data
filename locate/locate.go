@@ -9,7 +9,7 @@ import (
 // 定位对象,验证文件是否存在本地
 func Locate(name string) bool {
     _, err := os.Stat(name)
-    return os.IsNotExist(err)
+    return !os.IsNotExist(err)
 }
 
 // 监听定位消息

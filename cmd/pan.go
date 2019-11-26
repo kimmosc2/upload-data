@@ -1,4 +1,4 @@
-package cmd
+package main
 
 import (
     "log"
@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+    // log.SetFlags(log.Llongfile)
     go heartbeat.StartHeartBeat()
     go locate.StartLocate()
     http.HandleFunc("/objects/", objects.Handler)
